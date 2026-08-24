@@ -19,6 +19,8 @@ Cartelera de anime — "Retro Anime Cinema": una app que muestra una lista de pe
 ## Widgets utilizados
 - `MaterialApp`, `Scaffold`, `AppBar`
 - `Column`, `ListView.builder`, `Card`, `Row`
+- `Stack`, `Positioned`, `AspectRatio`, `Container` con `BoxDecoration` (degradado tipo banner)
+- `Image.asset` para carga de imágenes locales
 - `ElevatedButton` con lógica de estado (`StatefulWidget` + `setState`)
 - Colores personalizados (paleta neón sobre fondo oscuro)
 
@@ -34,6 +36,7 @@ Al presionar el botón **"🎬 Película sorpresa"**, la app selecciona aleatori
 5. Instalación e integración del paquete `google_fonts`.
 6. Pruebas en emulador Android.
 7. Publicación del proyecto en GitHub.
+8. Incorporación de imágenes de películas como assets locales y ajuste visual con `Stack` y degradado tipo banner.
 
 ## Cómo ejecutar el proyecto
 
@@ -62,6 +65,7 @@ flutter run
 | Pantalla principal | ![pantalla principal](capturas/pantalla_principal.png) |
 | Botón funcionando | ![boton funcionando](capturas/boton_funcionando.png) |
 | Uso del paquete google_fonts | ![google fonts](capturas/uso_google_fonts.png) |
+| Poster destacado con degradado | ![poster destacado](capturas/poster_destacado.png) |
 
 ### Repositorio
 | Descripción | Captura |
