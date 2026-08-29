@@ -71,3 +71,63 @@ flutter run
 | Descripción | Captura |
 |---|---|
 | Repositorio en GitHub | ![repo github](capturas/repo_github.png) |
+
+---
+
+## Actividad Integradora 2 — Navegación y nuevos widgets
+
+### Descripción breve
+Se continuó la aplicación **Retro Anime Cinema** de la Actividad Integradora 1 (no se creó una app nueva). Se pasó de una sola pantalla a una app con 4 pantallas navegables, organización en carpetas, favoritos persistentes, filtrado por género y personalización visual completa.
+
+### ¿Continuación o app nueva?
+Continuación de la app de la Actividad Integradora 1.
+
+### Nuevas funcionalidades
+- Navegación entre 4 pantallas mediante `Navigator` y una barra inferior (`BottomNavigationBar`).
+- Sistema de favoritos: marcar/desmarcar películas con un ícono de corazón, con persistencia en el dispositivo (sobrevive a cerrar la app).
+- Pantalla de géneros: cuadrícula de géneros y, al seleccionar uno, la lista de películas de ese género.
+- Reorganización del código en carpetas (`models`, `data`, `theme`, `services`, `screens`, `widgets`) en lugar de un único `main.dart`.
+- Personalización de nombre, ícono de launcher, logo y colores.
+
+### Pantallas desarrolladas
+1. **Cartelera (Home)** — lista completa de películas, botón de "película sorpresa" y acceso al detalle/favoritos de cada una.
+2. **Detalle de película** — imagen grande, año, género, sinopsis completa y botón de favorito.
+3. **Géneros** — cuadrícula de géneros (Cyberpunk, Fantasía, Drama, Acción); al tocar uno se muestra la lista filtrada de películas de ese género.
+4. **Acerca de** — logo del proyecto, datos del autor y descripción de la app.
+
+### Widgets nuevos utilizados
+`GridView`, `CircleAvatar`, `Divider`, `IconButton`, `BottomNavigationBar`, `IndexedStack`, además de los ya usados (`ListView`, `ListTile`, `Card`, `Image`, `Icon`, `ElevatedButton`, `Padding`, `SizedBox`, `Expanded`, `Container`).
+
+### Interacciones implementadas
+- Navegación completa entre las 4 pantallas (bottom nav + `Navigator.push`/`pop` al detalle y a los resultados de un género).
+- Marcar/desmarcar una película como favorita (ícono de corazón) con confirmación visual mediante `SnackBar`.
+- Filtrado de la cartelera al seleccionar un género en la pantalla de Géneros.
+
+### Funcionalidad con `setState()`
+El estado de favoritos (un `Set<String>` con los títulos marcados) vive en `RootScreen` (`lib/main.dart`). Al tocar el corazón en cualquier pantalla, `_toggleFavorite()` agrega o quita el título del set con `setState()`, lo que actualiza al instante el ícono en la Cartelera, el Detalle y los resultados de Géneros, y además guarda el cambio en el dispositivo.
+
+### Paquete externo
+[`shared_preferences`](https://pub.dev/packages/shared_preferences) — se usa para guardar la lista de películas favoritas en el almacenamiento local del dispositivo (`lib/services/favorites_service.dart`), de modo que los favoritos no se pierdan al cerrar y volver a abrir la app.
+
+### Personalización realizada
+- **Nombre de la app**: cambiado a "Retro Anime Cinema" en `AndroidManifest.xml` (Android) e `Info.plist` (iOS).
+- **Ícono de launcher**: generado a partir de un logo propio con el paquete de desarrollo `flutter_launcher_icons`.
+- **Logotipo**: imagen `assets/images/logo.png` con la paleta neón del proyecto, mostrada en la pantalla "Acerca de".
+- **Colores personalizados**: paleta neón (magenta, cian, morado oscuro) centralizada en `lib/theme/app_theme.dart`.
+
+| Descripción | Captura |
+|---|---|
+| Nombre e ícono en el launcher | ![nombre e icono](capturas/nombre_icono_app.png) |
+| Logo en pantalla "Acerca de" | ![logo about](capturas/logo_about.png) |
+| Pantalla de detalle de película | ![detalle](capturas/pantalla_detalle.png) |
+| Pantalla de géneros | ![generos](capturas/pantalla_generos.png) |
+| Favorito marcado | ![favorito](capturas/favorito_marcado.png) |
+| Navegación inferior | ![bottom nav](capturas/bottom_nav.png) |
+
+### Cómo ejecutar el proyecto
+```bash
+git clone https://github.com/jbustos-ecotec/retro-anime-cinema.git
+cd retro-anime-cinema
+flutter pub get
+flutter run
+```
