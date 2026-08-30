@@ -10,6 +10,8 @@ const Map<String, IconData> _genreIcons = {
   'Fantasía': Icons.eco,
   'Drama': Icons.local_florist,
   'Acción': Icons.flash_on,
+  'Thriller': Icons.psychology,
+  'Magia': Icons.auto_awesome,
 };
 
 class GenresScreen extends StatefulWidget {
