@@ -95,4 +95,9 @@ flutter_launcher_icons:
   android: true
   ios: true
   image_path: "assets/images/logo.png"
+  # Ícono adaptativo: fondo con el color del tema en lugar del blanco por defecto
+  adaptive_icon_background: "#120B1F"
+  adaptive_icon_foreground: "assets/icons/logo_foreground.png"
+  adaptive_icon_foreground_inset: 10
+  background_color_android: "#120B1F"
   min_sdk_android: 21
