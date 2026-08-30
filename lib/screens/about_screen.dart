@@ -11,7 +11,7 @@ class AboutScreen extends StatelessWidget {
         backgroundColor: AppColors.appBar,
         title: const Text('Acerca de'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
@@ -52,7 +52,7 @@ class AboutScreen extends StatelessWidget {
             const Divider(color: Colors.white24),
             const SizedBox(height: 16),
             const Text(
-              'Proyecto académico desarrollado con Flutter — Actividad Integradora 1 y 2.',
+              'Desarrollo de Aplicaciones Móviles — Actividad Integradora 2',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white54, fontSize: 12),
             ),

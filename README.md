@@ -77,7 +77,7 @@ flutter run
 ## Actividad Integradora 2 — Navegación y nuevos widgets
 
 ### Descripción breve
-Se continuó la aplicación **Retro Anime Cinema** de la Actividad Integradora 1 (no se creó una app nueva). Se pasó de una sola pantalla a una app con 4 pantallas navegables, organización en carpetas, favoritos persistentes, filtrado por género y personalización visual completa.
+Se continuó la aplicación **Retro Anime Cinema** de la Actividad Integradora 1. Se pasó de una sola pantalla a una app con 4 pantallas navegables, organización en carpetas, favoritos persistentes, filtrado por género y personalización visual completa.
 
 ### ¿Continuación o app nueva?
 Continuación de la app de la Actividad Integradora 1.
@@ -111,7 +111,8 @@ El estado de favoritos (un `Set<String>` con los títulos marcados) vive en `Roo
 
 ### Personalización realizada
 - **Nombre de la app**: cambiado a "Retro Anime Cinema" en `AndroidManifest.xml` (Android) e `Info.plist` (iOS).
-- **Ícono de launcher**: generado a partir de un logo propio con el paquete de desarrollo `flutter_launcher_icons`.
+- **Ícono de launcher**: ícono adaptativo generado con `flutter_launcher_icons` a partir del logo propio, con el fondo del tema (`#120B1F`) en lugar del blanco por defecto.
+- **Splash screen**: fondo con el color del tema y logo ampliado (`res/values-v31/styles.xml` y `res/drawable/launch_background.xml`).
 - **Logotipo**: imagen `assets/images/logo.png` con la paleta neón del proyecto, mostrada en la pantalla "Acerca de".
 - **Colores personalizados**: paleta neón (magenta, cian, morado oscuro) centralizada en `lib/theme/app_theme.dart`.
 
@@ -119,6 +120,7 @@ El estado de favoritos (un `Set<String>` con los títulos marcados) vive en `Roo
 |---|---|
 | Nombre e ícono en el launcher | ![nombre e icono](capturas/nombre_icono_app.png) |
 | Logo en pantalla "Acerca de" | ![logo about](capturas/logo_about.png) |
+| Splash screen personalizado | ![splash](capturas/splash_screen.png) |
 | Pantalla de detalle de película | ![detalle](capturas/pantalla_detalle.png) |
 | Pantalla de géneros | ![generos](capturas/pantalla_generos.png) |
 | Favorito marcado | ![favorito](capturas/favorito_marcado.png) |
